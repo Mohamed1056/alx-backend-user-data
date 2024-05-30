@@ -11,4 +11,5 @@ def hash_password(password):
     '''
     function that returns hashed password.
     '''
-    return bcrypt.hashpw(b'{password}', bcrypt.gensalt())
+    encoded = password.encode()
+    return bcrypt.hashpw(encoded, bcrypt.gensalt())
